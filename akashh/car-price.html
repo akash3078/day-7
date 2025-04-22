@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental UI</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f7ff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #e0e0e0;
+  margin-right: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.main-content {
+  flex: 1;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.filter-group {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 0 8px #e0e0e0;
+}
+.filter-group input {
+  margin: 5px 0;
+  width: 100%;
+}
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.car-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.car-card img {
+  max-width: 80%;
+  margin-bottom: 10px;
+}
+.car-card .specs {
+  font-size: 12px;
+  color: #777;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+.car-card .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.car-card button {
+  background-color: #6c47ff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.show-more {
+  margin-top: 20px;
+  display: block;
+  width: 40%;
+  padding: 10px;
+  background-color: #6c47ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 300px;
+}
+</style>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Type</h2>
+      <ul>
+        <li><input type="checkbox"> Sport</li>
+        <li><input type="checkbox"> SUV</li>
+        <li><input type="checkbox"> MPV</li>
+        <li><input type="checkbox"> Sedan</li>
+        <li><input type="checkbox"> Coupe</li>
+        <li><input type="checkbox"> Hatchback</li>
+      </ul>
+      <h2>Capacity</h2>
+      <ul>
+        <li><input type="radio" name="capacity"> 2-Person</li>
+        <li><input type="radio" name="capacity"> 4-Person</li>
+        <li><input type="radio" name="capacity"> 6-Person</li>
+        <li><input type="radio" name="capacity"> 8 or More</li>
+      </ul>
+      <h2>Price</h2>
+      <input type="range" min="0" max="200" value="200">
+      <p>Max. $200.00</p>
+    </aside>
+    <main class="main-content">
+      <div class="filters">
+        <div class="filter-group">
+          <label>Pick-Up</label>
+          <input type="text" placeholder="Location">
+          <input type="date">
+          <input type="time">
+        </div>
+        <div class="filter-group">
+          <label>Drop-Off</label>
+          <input type="text" placeholder="Location">
+          <input type="date">
+          <input type="time">
+        </div>
+      </div>
+      <div class="car-grid">
+        <div class="car-card">
+          <img src="nissan1.webp" alt="Nissan GT-R">
+          <h3>Nissan GT-R</h3>
+          <p>Sport</p>
+          <div class="specs">
+            <span>80L</span>
+            <span>Manual</span>
+            <span>2 People</span>
+          </div>
+          <div class="price">
+            <span>$80.00/day</span>
+            <button>Rent Now</button>
+          </div>
+        </div>
+
+        <div class="car-card">
+            <img src="Car2.jpg" alt="Nissan GT-R">
+            <h3>Rolls-Rayce</h3>
+            <p>Sport</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>2 People</span>
+            </div>
+            <div class="price">
+              <span>$95.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="car3.png" alt="Nissan GT-R">
+            <h3>hyundai I10 Sport</h3>
+            <p>Sport</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>2 People</span>
+            </div>
+            <div class="price">
+              <span>$100.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="car4.jpeg" alt="Nissan GT-R">
+            <h3>CR-V Honda</h3>
+            <p>Sport</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>2 People</span>
+            </div>
+            <div class="price">
+              <span>$80.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="car5.jpeg" alt="Nissan GT-R">
+            <h3>All New Torres</h3>
+            <p>SUV</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>4 People</span>
+            </div>
+            <div class="price">
+              <span>$120.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="Car6.jpeg" alt="Nissan GT-R">
+            <h3>NEW MG Z5</h3>
+            <p>SUV</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>V People</span>
+            </div>
+            <div class="price">
+              <span>$80.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="car7.jpeg" alt="Nissan GT-R">
+            <h3>MG ZX EXCITE</h3>
+            <p>SUV</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>2 People</span>
+            </div>
+            <div class="price">
+              <span>$130.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <img src="car8.webp" alt="Nissan GT-R">
+            <h3>VIPER</h3>
+            <p>Sport</p>
+            <div class="specs">
+              <span>80L</span>
+              <span>Manual</span>
+              <span>2 People</span>
+            </div>
+            <div class="price">
+              <span>$200.00/day</span>
+              <button>Rent Now</button>
+            </div>
+          </div>
+
+      </div>
+
+      <button class="show-more">Show more car</button>
+    </main>
+  </div>
+</body>
+</html> 
